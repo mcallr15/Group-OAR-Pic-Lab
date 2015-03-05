@@ -17,3 +17,25 @@ public void copyParts(Picture fromPic, int startRow, int endRow, int startCol, i
   }
 
 //2)
+public void createMyCollage()
+  {
+    Picture flower1 = new Picture("flower1.jpg");
+    
+    Picture flowerNoBlue = new Picture(flower1);
+    flowerNoBlue.zeroBlue();
+    Picture flowerNegate = new Picture(flower1);
+    flowerNegate.negate();
+    Picture flowerOnlyBlue = new Picture(flower1);
+    flowerOnlyBlue.keepOnlyBlue();
+    Picture flowerGray = new Picture(flower1);
+    flowerGray.grayScale();
+    
+    this.copy(flower1,0,0);
+    this.copy(flowerNegate,100,0);
+    this.copy(flowerGray,200,0);
+    this.copy(flowerNoBlue,300,0);
+    this.copy(flowerOnlyBlue,400,0);
+    this.copy(flowerNoBlue,500,0);
+    this.mirrorVertical();
+    this.write("collage.jpg");
+  }
