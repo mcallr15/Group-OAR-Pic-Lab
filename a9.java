@@ -21,3 +21,5 @@ public void edgeDetectionUpDown(int edgeDist)
       }
     }
   }
+  
+//2)
