@@ -23,3 +23,25 @@ public void edgeDetectionUpDown(int edgeDist)
   }
   
 //2)
+public void edgeDetectionToTheLeft(int edgeDist)
+  {
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    Pixel[][] pixels = this.getPixels2D();
+    Color rightColor = null;
+    
+    for (int row = 0; row < pixels.length; row++)
+    {
+      for (int col = 1; col < pixels[0].length; col++)
+      {
+        leftPixel = pixels[row][col];
+        rightPixel = pixels[row][col-1];
+        rightColor = rightPixel.getColor();
+        if (leftPixel.colorDistance(rightColor) > 
+            edgeDist)
+          leftPixel.setColor(Color.BLACK);
+        else
+          leftPixel.setColor(Color.WHITE);
+      }
+    }
+  }
